@@ -1,0 +1,83 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #eef2f7 0%, #cbd5e1 100%);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-card {
+  width: 520px;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+}
+
+/* Hero wrapper */
+.hero {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(255, 221, 100, 0.25),
+    transparent 70%
+  );
+  z-index: 0;
+}
+
+/* Image styling */
+.hero img {
+  max-height: 700px;
+  object-fit: contain;
+  filter: brightness(1.05);
+
+   -webkit-mask-image: linear-gradient(
+    to left,
+    black 70%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to left,
+    black 70%,
+    transparent 100%
+  );
+}
+
+/* Soft blend effect */
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    #eef2f7 0%,
+    rgba(238, 242, 247, 0.8) 40%,
+    rgba(238, 242, 247, 0) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
